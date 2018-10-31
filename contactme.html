@@ -8,7 +8,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	
+
 
 	<title> </title>
 </head>
@@ -22,10 +22,8 @@
 		<a href="aboutme.html">About Me</a>
 	</div>
 
-	<p> <br> </p>    
-
-
-		<!-- This code currently doesn't send data anywhere... Will need to be implemented in a later date.-->
+	<p> <br> </p>
+	<<form id="contact-form" method="post" action="contact.php" role="form">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8">
@@ -41,30 +39,45 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<form>Full Name<br> </form>
-										<input type="text" name="fullname" placeholder="What's your name?">
+										<label for="form_name">Fullname *</label>
+									  <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your name *" required="required" data-error="Firstname is required.">
+										<div class="help-block with-errors"></div>
+
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<form>E-mail *<br> </form>
-										<input type="text" name="E-mail" placeholder="What's your e-mail?">
+									<label for="form_email">Email *</label>
+									<input id="form_email" type="text" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+									<div class="help-block with-errors"></div>
 									</div>
 								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="phone_number">Phone Number</label>
+										<input id="phone_number" type="text" name="phone" class="form-control" placeholder="Please enter your phone #">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="subject">Subject </label>
+										<input id="subject" type="text" name="subject" class="form-control" placeholder="Subject" required="required" data-error="Please enter a subject.">>
+										<div class="help-block with-errors"></div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<form>Message</form>
-									<textarea class="form-control" rows="5" placeholder="Send me a friendly message!"  required></textarea>
-
+										<label for="form_message">Message *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave me a message."></textarea>
+                    <div class="help-block with-errors"></div>
 
 								</div>
 							</div>
 							<div class="col-md-12">
-								<input type="submit"value="Send message">
+								<input type="submit" class="btn btn-success btn-send" value="Send message">
 							</div>
 						</div>
 						<div class="row">
@@ -95,7 +108,7 @@
 			</div>
 			<div class="col-md-4">
 				<img src="images/phone.jpg" width="200" height="200">
-				<p>Phone Number:(123)456-7890</p>
+				<p>Phone Number:(408)966-4862</p>
 			</div>
 		</div>
 	</div>
@@ -104,7 +117,7 @@
 	<script src="validator.js"></script>
 	<script src="contact.js"></script>
 
-
+</form>
 </body>
 
 </html>
